@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+    <header class="header">
+        <a href="http://127.0.0.1:5500/index.html" class="logo"><img src="logo4.png" alt="Logo"></a>
+        <nav class="navbar">
+            <a href="http://127.0.0.1:5500/index.html" class="active">Home</a>
+            <a href="http://127.0.0.1:5500/index4.html">About</a>
+            <a href="http://127.0.0.1:5500/index3.html">Portfolio</a>
+            <a href="http://127.0.0.1:5500/index10.html">Blogs</a>
+            <a href="http://127.0.0.1:5500/index5.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's me</h3>
+            <h1><span data-text="Ishara...">Ishara...</span></h1>
+            <h3 class="text-animation"><span class="role"></span></h3>
+            <p>Welcome to my portfolio!Explore my journey through technology and management.</p>
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+            <a href="https://www.linkedin.com/in/ishara-peiris-9039b9230/
+
+            " class="btn">Contact Me</a>
+        </div>
+        <div class="home-img">
+            <img src="profile3.png" alt="">
+        </div>
+    </section>
+
+    <script>
+        const roles = ["Developer", "Designer", "Content Creator"];
+        let roleIndex = 0;
+        const roleElement = document.querySelector('.role');
+
+        function updateRole() {
+            roleElement.textContent = roles[roleIndex];
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+
+        setInterval(updateRole, 2000);
+        updateRole();
+    </script>
+</body>
+</html>

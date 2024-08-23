@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #111;
+    --second-bg-color: #151515;
+    --text-color: white;
+    --main-color: #04fffb;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+.section {
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20rem;
+    padding: 0 10%;
+    flex-wrap: wrap;
+}
+
+.home-content {
+    max-width: 50%;
+}
+
+.home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 7rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    line-height: 1;
+    color: rgb(189, 255, 127);
+    -webkit-text-stroke: 0.3vw #04fffb;
+    text-transform: uppercase;
+}
+
+.home-content h1 span {
+    position: relative;
+    display: inline-block;
+    color: #151515;
+}
+
+.home-content h1 span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: white;
+    -webkit-text-stroke: 0vw red;
+    border-right: 1px solid white;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}
+
+.text-animation {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    color: white;
+}
+
+.home-img {
+    flex-shrink: 0;
+    height: 30%;
+    text-align: right;
+}
+
+.home-img img {
+    position: relative;
+    width: 26vw;
+    height: 26vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 10px;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 500px;
+    margin-top: 1.5rem;
+}
+
+.social-icons {
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 1.5rem 1.5rem 0 0;
+}
+
+.social-icons a:hover {
+    color: white;
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 25px;
+    margin-top: 2rem;
+    color: black;
+    font-size: large;
+    transition: 0.4s ease-in-out;
+}
+
+.btn:hover {
+    background: transparent;
+    cursor: pointer;
+    border: 0.2rem solid var(--main-color);
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content, .home-img {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .text-animation {
+        font-size: 1.5rem;
+    }
+
+    .home-img img {
+        width: 35vw;
+        height: 35vw;
+    }
+}
+
+
