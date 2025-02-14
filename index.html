@@ -7,9 +7,53 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style8.css">
 </head>
+    <style>
+        
+/* Mobile Menu (Hidden by Default) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide menu */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+        padding: 10px;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    /* Show Menu When Active */
+    .navbar.active {
+        display: flex;
+    }
+}
+
+    </style>
 <body>
       
     <header class="header ">
+         <!-- Hamburger Menu Icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        ☰
+    </div>
         <a href="http://127.0.0.1:5500/index.html" class="logo"><img src="logo4.png" alt="Logo"></a>
         <nav class="navbar">
             <a href="index.html" class="active">Home</a>
@@ -52,6 +96,12 @@
 
         setInterval(updateRole, 2000);
         updateRole();
+
+
+        function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+
     </script>
 </body>
 </html>
